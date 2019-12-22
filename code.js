@@ -17,8 +17,8 @@
       answer: "script"
     },
     {
-      title: "The external JavaScript file must contain <script> tag. True or False",
-      choices: ["true", "false"],
+      title: "The external JavaScript file must contain <script> tag.",
+      choices: ["true", "false", "true with quotes", "false with quotes"],
       answer: "false"
     },
     {
