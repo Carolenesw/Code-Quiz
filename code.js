@@ -1,10 +1,13 @@
-//create varibales for the main ID selectors progress and button selectors from html file. 
+//create all necessary elements. 
 
 var progressA = document.getElementById("progress");
+var comQuiz = document.getElementById("main")
 var quizQes = document.getElementById("quiz");
 var buttOne = document.getElementById("btn0");
 var buttTwo = document.getElementById("btn1");
 var buttThr = document.getElementById("btn2");
+
+var timeLeft = 75;
 
 // add variables for for the questions and status of the user 
 
@@ -45,7 +48,27 @@ var quizQuestions = {
 
 };
 
+function runTimer() {
+  var timeInterval = setInterval(function()
+  {
+    secondsLeft--;
+    progressA.textContent = secondsLeft + "time left to complete quiz.";
 
+    if(secondsLeft === 0) {
+      clearInterval(timeInterval);
+      sendMessage();
+    }
 
-  alert("Question 1" + quizQuestions["question1"]);
-//  alert ("Question 1" + quizQuestions["question1"]);
+  }, 75000);
+}
+function sendMessage() {
+  progressA.textContent = " ";
+
+  var butFinish = document.createElement("button");
+  butFinish.textContent = "Quiz Complete!";
+  comQuiz.appendChild(butFinish);
+}
+
+runTimer();
+
+console.log(runTimer());
