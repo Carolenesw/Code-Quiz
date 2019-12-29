@@ -8,35 +8,24 @@ var quizResuts = document.getElementById("result");
 var timeLeft = 75;
 
 
-// add variables for for the questions and status of the user 
-
-var userStatus = 0;
-var correctAnswers = 0;
-var progress, quiz, question, choices, answer, ansA, ansB, ansC;
-
 
 var startQuiz = confirm("Start Quiz");
 
 
-// quiz display and results
+// quiz display choices and results to store quiz output
 function beginQuiz() {
 
   const answerchoice = [];
 
   quiQuestions.forEach((askQuestions, solutionNumbers) => {
+    //store answer choices 
     const choices = [];
-
-    for(letter in askQuestions.choices) {
-
-      choices.push(
-        
-      );
-    }
-
-  })
-}
-
-function results() {}
+    //slection for each available answers 
+    if (letter in askQuestions.choices) {
+      choices.push(askQuestions);
+    } else {
+choices.push(solutionNumbers)
+  };
 
 
 beginQuiz();
@@ -65,7 +54,7 @@ var quiQuestions = [
     },
     Answer: "b"
   },
-  
+
   {
     question: "What is the HTML tag under which one can write the JavaScript code.?",
     choices: {
@@ -97,21 +86,13 @@ var quiQuestions = [
   },
 ];
 
-
-
-
-  
-  
- 
-  
-   
+//run function for timer with 15 seconds per question, totallying 75 seconds quiz time
 function runTimer() {
-  var timeInterval = setInterval(function()
-  {
-    secondsLeft --;
+  var timeInterval = setInterval(function () {
+    secondsLeft--;
     progressA.textContent = secondsLeft + "time left to complete quiz.";
 
-    if(secondsLeft === 0) {
+    if (secondsLeft === 0) {
       clearInterval(timeInterval);
       sendMessage();
     }
@@ -126,14 +107,8 @@ function sendMessage() {
   comQuiz.appendChild(butFinish);
 }
 
+
 runTimer();
 
-console.log(runTimer());
+// console.log(runTimer());
 
-function array() {
-  if(myArray === myArray[0]);
-  chioces[0];
-} if (myArray === myArray[1]); {
-  choices[1];
-}
-array();
