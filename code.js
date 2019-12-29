@@ -21,6 +21,19 @@ var startQuiz = confirm("Start Quiz");
 // quiz display and results
 function beginQuiz() {
 
+  const answerchoice = [];
+
+  quiQuestions.forEach((askQuestions, solutionNumbers) => {
+    const choices = [];
+
+    for(letter in askQuestions.choices) {
+
+      choices.push(
+        
+      );
+    }
+
+  })
 }
 
 function results() {}
@@ -92,35 +105,35 @@ var quiQuestions = [
  
   
    
-// function runTimer() {
-//   var timeInterval = setInterval(function()
-//   {
-//     secondsLeft --;
-//     progressA.textContent = secondsLeft + "time left to complete quiz.";
+function runTimer() {
+  var timeInterval = setInterval(function()
+  {
+    secondsLeft --;
+    progressA.textContent = secondsLeft + "time left to complete quiz.";
 
-//     if(secondsLeft === 0) {
-//       clearInterval(timeInterval);
-//       sendMessage();
-//     }
+    if(secondsLeft === 0) {
+      clearInterval(timeInterval);
+      sendMessage();
+    }
 
-//   }, 75000);
-// }
-// function sendMessage() {
-//   progressA.textContent = " ";
+  }, 75000);
+}
+function sendMessage() {
+  progressA.textContent = " ";
 
-//   var butFinish = document.createElement("button");
-//   butFinish.textContent = "Quiz Complete!";
-//   comQuiz.appendChild(butFinish);
-// }
+  var butFinish = document.createElement("button");
+  butFinish.textContent = "Quiz Complete!";
+  comQuiz.appendChild(butFinish);
+}
 
-// runTimer();
+runTimer();
 
-// console.log(runTimer());
+console.log(runTimer());
 
-// function array() {
-//   if(myArray === myArray[0]);
-//   chioces[0];
-// // } if (myArray === myArray[1]); {
-// //   choices[1];
-// // }
-// array();
+function array() {
+  if(myArray === myArray[0]);
+  chioces[0];
+} if (myArray === myArray[1]); {
+  choices[1];
+}
+array();
