@@ -7,25 +7,40 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Code Quiz</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
 
   <h1>JS Code Quiz</h1>
 
+  <h2 id="Start">Start Quiz</h2>
+
+
+
   <div id="quiz"></div>
   <div id="progress"></div>
-<button id="submit">Submit</button>
-<div id="results"></div>
+  <button id="submit">Submit</button>
+  <div id="results"></div>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $("#Start").on("click", function () {
+        alert("Start!");
+      });
+
+    });
 
 
 
+
+
+  </script>
   <script src="code.js"></script>
   <script src="questions.js"></script>
-
 </body>
 
 </html>
-
-
-
