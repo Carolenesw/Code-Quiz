@@ -7,11 +7,6 @@ var quizResuts = document.getElementById("result");
 
 
 
-
-// var startQuiz = confirm("Start Quiz");
-
-
-
 // quiz display choices and results to store quiz output
 // function beginQuiz() {
 
@@ -86,51 +81,11 @@ var quiQuestions = [
   },
 ];
 
-// var quiQuestions1 = $("quiQuestions");
 
-// for (var i = 0; i < quiQuestions.length; i++) {
-//   var newQuizQues = $("")
-// }
-
-
-//set timer seconds to run quiz 
-// var today = new Date();
-// var runTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-// var maxTime = 75000;
-
-// var timer = Date.parse(maxTime) - Date.parse(new Date());
-// var seconds = Math.floor((runTime/1000) * 15);
-//   var minutes = Math.floor((runTime/1000/60) * 60);
-
-// function getTimeLeft(maxTime) {
-// return { 
-//   "minutes": minutes,
-//   "seconds" : seconds
-// };
-// }
-// console.log(getTimeLeft());
-// getTimeLeft(runTime).seconds
-
-// // set timer output to run time in seconds 
-// var progressA = document.getElementById(progress);
-
-// function startTimer(id, maxTime) {
-//   var timerInterval = setInterval (function() {
-//   var timer = getTimeLeft(maxTime);
-//   progress.innerHTML = "minutes:"  + timer.second + "seconds: " + timer.seconds;
-  
-//   if(timer.total == 0) {
-//     clearInterval(timerInterval);
-//   }
-//   }, 1000);
-  
-// }
-// console.log(startTimer("id"));  
-// startTimer(progress, runTime);
 var timerId;
 var timeLeft = 75;
 
-   
+   // use oclick to start code and set timer for quiz
 
 $("#Start").on("click", function () {
   alert("Start Quiz!")
@@ -144,10 +99,8 @@ $("#Start").on("click", function () {
         $("#rem-time").text(timeLeft);               
          timeLeft--;            }        
         }        
-                
-    
         });
 
-        function resultCount(){
-          timeLeft = 30;
-        }
+        // function resultCount(){
+        //   timeLeft = 75;
+        // }
