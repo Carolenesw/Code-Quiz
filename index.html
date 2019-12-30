@@ -15,7 +15,7 @@
 
   <h1>JS Code Quiz</h1>
 
-  <h2 id="Start">Start Quiz</h2>
+  <button id="Start">Start Quiz</button>
 
 
 
@@ -23,23 +23,9 @@
   <div id="progress"></div>
   <button id="submit">Submit</button>
   <div id="results"></div>
+  <h1>Remaining Time: <span id="rem-time">00</span></h1>
 
-  <script type="text/javascript">
-
-    $(document).ready(function () {
-
-      $("#Start").on("click", function () {
-        alert("Start!");
-      });
-
-    });
-
-
-
-
-
-  </script>
-  <script src="code.js"></script>
+  <script src="./code.js"></script>
   <script src="questions.js"></script>
 </body>
 
