@@ -13,24 +13,24 @@ var startQuiz = confirm("Start Quiz");
 
 
 // quiz display choices and results to store quiz output
-function beginQuiz() {
+// function beginQuiz() {
 
-  const answerchoice = [];
+//   const answerchoice = [];
 
-  quiQuestions.forEach((askQuestions, solutionNumbers) => {
-    //store answer choices 
-    const choices = [];
-    //slection for each available answers 
-    if (letter in askQuestions.choices) {
-      choices.push(askQuestions);
-    } else {
-choices.push(solutionNumbers)
-  };
+//   quiQuestions.forEach((askQuestions, solutionNumbers) => {
+//     //store answer choices 
+//     const choices = [];
+//     //slection for each available answers 
+//     if (letter in askQuestions.choices) {
+//       choices.push(askQuestions);
+//     } else {
+// choices.push(solutionNumbers)
+//   };
 
 
-beginQuiz();
+// beginQuiz();
 
-subQuiz.addEventListener('click', results);
+// subQuiz.addEventListener('click', results);
 
 // quiz questions, choices and answer for selection. 
 
@@ -86,29 +86,16 @@ var quiQuestions = [
   },
 ];
 
-//run function for timer with 15 seconds per question, totallying 75 seconds quiz time
-function runTimer() {
-  var timeInterval = setInterval(function () {
-    secondsLeft--;
-    progressA.textContent = secondsLeft + "time left to complete quiz.";
 
-    if (secondsLeft === 0) {
-      clearInterval(timeInterval);
-      sendMessage();
-    }
+var maxTime = 75;
 
-  }, 75000);
+
+function getTimeLeft() {
+  var seconds = Math.floor((1000) *75)
+
+return { "seconds" : seconds
+};
 }
-function sendMessage() {
-  progressA.textContent = " ";
-
-  var butFinish = document.createElement("button");
-  butFinish.textContent = "Quiz Complete!";
-  comQuiz.appendChild(butFinish);
-}
-
-
-runTimer();
-
-// console.log(runTimer());
+console.log(getTimeLeft());
+getTimeLeft();
 
