@@ -1,6 +1,6 @@
 //create all necessary elements. 
 
-// var progressA = document.getElementById("progress");
+
 var subQuiz = document.getElementById("submit")
 var quizQes = document.getElementById("quiz");
 var quizResuts = document.getElementById("result");
@@ -87,29 +87,35 @@ var quiQuestions = [
 ];
 
 //set timer seconds to run quiz 
+var today = new Date();
+var runTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 var maxTime = 75;
 
-function getTimeLeft() {
-  var seconds = Math.floor((1000) *75)
+var timer = Date.parse(maxTime) - Date.parse(new Date());
+var seconds = Math.floor((runTime/1000) % 15);
+  var minutes = Math.floor((runTime/1000/60) % 60);
 
+function getTimeLeft(maxTime) {
 return { "seconds" : seconds
 };
 }
 console.log(getTimeLeft());
-getTimeLeft();
+getTimeLeft(runTime).seconds
 
 //set timer output to run time in seconds 
-function startTimer(id) {
-  var timer = document.getElementById(progress)
-  var timerInterval = setInterval (function() {
-  var seconds = getTimeLeft();
-  progress.innerHTML = "seconds: " + seconds;
+// var progressA = document.getElementById(progress);
 
-  if(seconds.total<0) {
-    clearInterval(timerInterval);
-  }
-  }, 1000);
+// function startTimer(id, maxTime) {
+//   var timerInterval = setInterval (function() {
+//   var timer = getTimeLeft(maxTime);
+//   progress.innerHTML = "seconds: " + timer.seconds;
+
+//   if(timer.total == 0) {
+//     clearInterval(timerInterval);
+//   }
+//   }, 1000);
   
-}
-console.log(startTimer());  
-startTimer();
+// }
+// console.log(startTimer());  
+// startTimer(progress, runTime);
+
