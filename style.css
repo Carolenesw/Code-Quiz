@@ -1,6 +1,31 @@
+h1 {
+  text-align: center;
+}
+
+
+
 #progress { 
   border: burlywood 3px solid; 
   padding:10px 40px 40px 40px; 
   background-color: whitesmoke; 
   width:50%;
+  
+}
+
+#Start {
+border: cadetblue 3px solid;
+padding: 10px;
+width: 60px;
+background-color: teal;
+color: white;
+font-size: 15px;
+}
+
+#submit {
+  border: cadetblue 3px solid;
+padding: 10px;
+width: 70px;
+background-color: teal;
+color: whitesmoke;
+font-size: 15px;
 }
