@@ -89,33 +89,35 @@ var quiQuestions = [
 //set timer seconds to run quiz 
 var today = new Date();
 var runTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var maxTime = 75;
+var maxTime = 75000;
 
 var timer = Date.parse(maxTime) - Date.parse(new Date());
 var seconds = Math.floor((runTime/1000) % 15);
   var minutes = Math.floor((runTime/1000/60) % 60);
 
 function getTimeLeft(maxTime) {
-return { "seconds" : seconds
+return { 
+  "minutes": minutes,
+  "seconds" : seconds
 };
 }
 console.log(getTimeLeft());
 getTimeLeft(runTime).seconds
 
-//set timer output to run time in seconds 
-// var progressA = document.getElementById(progress);
+// set timer output to run time in seconds 
+var progressA = document.getElementById(progress);
 
-// function startTimer(id, maxTime) {
-//   var timerInterval = setInterval (function() {
-//   var timer = getTimeLeft(maxTime);
-//   progress.innerHTML = "seconds: " + timer.seconds;
-
-//   if(timer.total == 0) {
-//     clearInterval(timerInterval);
-//   }
-//   }, 1000);
+function startTimer(id, maxTime) {
+  var timerInterval = setInterval (function() {
+  var timer = getTimeLeft(maxTime);
+  progress.innerHTML = "minutes:"  + timer.second + "seconds: " + timer.seconds;
   
-// }
-// console.log(startTimer());  
-// startTimer(progress, runTime);
+  if(timer.total == 0) {
+    clearInterval(timerInterval);
+  }
+  }, 1000);
+  
+}
+console.log(startTimer("id"));  
+startTimer(progress, runTime);
 
