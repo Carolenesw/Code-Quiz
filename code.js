@@ -1,6 +1,6 @@
 //create all necessary elements. 
 
-const progressA = document.getElementById("progress");
+// var progressA = document.getElementById("progress");
 var subQuiz = document.getElementById("submit")
 var quizQes = document.getElementById("quiz");
 var quizResuts = document.getElementById("result");
@@ -86,9 +86,8 @@ var quiQuestions = [
   },
 ];
 
-
+//set timer seconds to run quiz 
 var maxTime = 75;
-
 
 function getTimeLeft() {
   var seconds = Math.floor((1000) *75)
@@ -99,3 +98,18 @@ return { "seconds" : seconds
 console.log(getTimeLeft());
 getTimeLeft();
 
+//set timer output to run time in seconds 
+function startTimer(id) {
+  var timer = document.getElementById(progress)
+  var timerInterval = setInterval (function() {
+  var seconds = getTimeLeft();
+  progress.innerHTML = "seconds: " + seconds;
+
+  if(seconds.total<0) {
+    clearInterval(timerInterval);
+  }
+  }, 1000);
+  
+}
+console.log(startTimer());  
+startTimer();
