@@ -2,7 +2,7 @@
 
 
 var subQuiz = document.getElementById("submit")
-var quizQes = document.getElementById("quiz");
+
 var quizResuts = document.getElementById("result");
 
 
@@ -31,7 +31,7 @@ var quizResuts = document.getElementById("result");
 
 var quiQuestions = [
   {
-    question: "Commonly used data types DO NOT include?",
+    question1: "Commonly used data types DO NOT include?",
     choices: {
       a: "strings",
       b: "booleans",
@@ -41,7 +41,7 @@ var quiQuestions = [
   },
 
   {
-    question: "The condition in an if or else statement is enclosed within ____.?",
+    question2: "The condition in an if or else statement is enclosed within ____.?",
     choices: {
       a: "quotes",
       b: "parentheses",
@@ -51,7 +51,7 @@ var quiQuestions = [
   },
 
   {
-    question: "What is the HTML tag under which one can write the JavaScript code.?",
+    question3: "What is the HTML tag under which one can write the JavaScript code.?",
     choices: {
       a: "scripted",
       b: "script",
@@ -61,7 +61,7 @@ var quiQuestions = [
   },
 
   {
-    question: "The external JavaScript file must contain <script> tag?",
+    question4: "The external JavaScript file must contain <script> tag?",
     choices: {
       a: "true",
       b: "false",
@@ -71,7 +71,7 @@ var quiQuestions = [
   },
 
   {
-    question: "Which of the following is not a reserved word in JavaScript?",
+    question5: "Which of the following is not a reserved word in JavaScript?",
     choices: {
       a: "interface",
       b: "throw",
@@ -85,22 +85,40 @@ var quiQuestions = [
 var timerId;
 var timeLeft = 75;
 
-   // use oclick to start code and set timer for quiz
+// use oclick to start code and set timer for quiz
 
 $("#Start").on("click", function () {
   alert("Start Quiz!")
 
-       timerId = setInterval(countdown, 1000);  
-    function countdown() {            
-      if (timeLeft === -1) {                
-        clearTimeout(timerId);                
-      }            
-      else {                
-        $("#rem-time").text(timeLeft);               
-         timeLeft--;            }        
-        }        
-        });
+  timerId = setInterval(countdown, 1000);
+  function countdown() {
+    if (timeLeft === -1) {
+      clearTimeout(timerId);
+    }
+    else {
+      $("#rem-time").text(timeLeft);
+      timeLeft--;
+    }
+  }
+});
 
-        // function resultCount(){
-        //   timeLeft = 75;
-        // }
+// function resultCount(){
+//   timeLeft = 75;
+// }
+
+
+
+
+//   runQuiz();
+
+for (var i = 0; i <quiQuestions.length; i ++) {
+  console.log(quiQuestions[i]);
+}
+
+// var quizQes = $("#quiz");
+// for (var i = 0; i < quiQuestions.length; i++) {
+//   var questionsAsk = $("<div>" + quiQuestions[i] + "</div>");
+//   quizQes.append(questionsAsk);
+//   var questionsAsk = Math.floor(Math.random() * quiQuestions.length);
+//   // Console.log(quiQuestions[i]);
+// }
