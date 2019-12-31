@@ -110,15 +110,17 @@ $("#Start").on("click", function () {
 
 
 //   runQuiz();
-
+//set for loop for to run quiz questions. 
 for (var i = 0; i <quiQuestions.length; i ++) {
   console.log(quiQuestions[i]);
+
+//append quiz questions to quiz 
+var quizResuts = $("<button>");
+
+quizResuts.text(quiQuestions[i]);
+
+$("#quiz").append(quizResuts);
+console.log(quizResuts);
+console.log(quiQuestions);
 }
 
-// var quizQes = $("#quiz");
-// for (var i = 0; i < quiQuestions.length; i++) {
-//   var questionsAsk = $("<div>" + quiQuestions[i] + "</div>");
-//   quizQes.append(questionsAsk);
-//   var questionsAsk = Math.floor(Math.random() * quiQuestions.length);
-//   // Console.log(quiQuestions[i]);
-// }
