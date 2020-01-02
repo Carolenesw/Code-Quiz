@@ -81,7 +81,7 @@ var quiQuestions = [
   },
 ];
 
-
+$(document).ready(function() {
 var timerId;
 var timeLeft = 75;
 
@@ -109,18 +109,25 @@ $("#Start").on("click", function () {
 
 
 
-//   runQuiz();
 //set for loop for to run quiz questions. 
 for (var i = 0; i <quiQuestions.length; i ++) {
   console.log(quiQuestions[i]);
 
-//append quiz questions to quiz 
 var quizResuts = $("<button>");
 
 quizResuts.text(quiQuestions[i]);
-
 $("#quiz").append(quizResuts);
-console.log(quizResuts);
-console.log(quiQuestions);
-}
 
+quizResuts = prompt(quiQuestions[i]);
+
+console.log(quizResuts);
+// console.log(quiQuestions);
+}
+});
+// for (var i = 1; i < 4; i++) {
+
+//   // Each time it asks the user for their #1, #2, or #3 TV show.
+//   tvShow = prompt("What's your #" + i + " favorite TV show?");
+
+//   // It then takes the user's response and "pushes" (or adds) the variable to the end of the favTVshows array.
+//   favTVshows.push(tvShow);
